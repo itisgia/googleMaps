@@ -1,0 +1,18 @@
+h1{
+  text-align: center;
+  margin-top: 4%;
+}
+
+*{
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#map{
+  width: 90%;
+  height: 600px;
+  margin: 0 auto;
+
+}
