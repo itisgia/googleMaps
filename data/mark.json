@@ -1,0 +1,52 @@
+[
+    {
+        "place_name": "Te Papa Museum",
+        "lat" : "-41.290456",
+        "lng" : " 174.782089"
+    },
+    {
+        "place_name": "Botanic Garden",
+        "lat" : "-41.282308",
+        "lng" : "174.767451"
+    },
+    {
+        "place_name": "Cable Car",
+        "lat" : "-41.284050",
+        "lng" : "174.775113"
+    },
+    {
+        "place_name": "War Museum",
+        "lat" : " -41.285103",
+        "lng" : "174.778080"
+    },
+    {
+        "place_name": "Mt. Victoria LookOut",
+        "lat" : "-41.296057",
+        "lng" : "174.794310"
+    },
+    {
+        "place_name": "Wellington Zoo",
+        "lat" : "-41.319543 ",
+        "lng" : "174.784643"
+    },
+    {
+        "place_name": "War memorial",
+        "lat" : "-41.298840",
+        "lng" : "174.777233"
+    },
+    {
+        "place_name": "Water Front",
+        "lat" : " -41.286625",
+        "lng" : "174.779242"
+    },
+    {
+        "place_name": "Red Rocks",
+        "lat" : "-41.357489",
+        "lng" : "174.726508"
+    },
+    {
+        "place_name": "Great War Exhibition",
+        "lat" : "-41.299537",
+        "lng" : "174.776896"
+    }
+]
