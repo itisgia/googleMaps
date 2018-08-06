@@ -4,7 +4,8 @@
 // if you do it this way, you won'thave an error whatsoever
 google.maps.event.addDomListener(window, 'load', initmap);
 var map; // making in global to use in other functions
-
+var latlng;
+var infoBox;
 function initmap() {
 
     var mapOptions = {
@@ -105,7 +106,7 @@ function addAllMarkrers() {
             // console.log(markers);
             //adding palce name usong for loop
             for (var i = 0; i < markers.length; i++) {
-              $("#places").append("<div class='place'><h3>"+markers[i].place_name+"</h3></div><hr>");
+                $("#places").append("<div class='place' onclick='findMe();'><h3>"+markers[i].place_name+"</h3></div><hr>");
 
               var marker = new google.maps.Marker({
                   position : {
@@ -113,12 +114,13 @@ function addAllMarkrers() {
                       lng: markers[i].lng
                   },
                   title: markers[i].place_name,
+                  description: 'this is a description of the marker',
                   map: map, // init map
-                  animation: google.maps.Animation.BOUNCE,
+                  // animation: google.maps.Animation.BOUNCE,
                   icon: new google.maps.MarkerImage('data/kiwi-bird.svg',
-                    null, null, null, new google.maps.Size(164,164)),
-                  draggable: false,
+                    null, null, null, new google.maps.Size(164,164))
               });
+              markerClickEvent(marker);
             }
         },
         error: function (error) {
@@ -126,4 +128,28 @@ function addAllMarkrers() {
             console.log(error);
         }
     });
+}
+
+// passig marker
+function markerClickEvent(marker) {
+    if(infoBox){
+        infoBox.close(); // if infobox is open close
+    }
+  //initialzing info window
+    infoBox = new google.maps.InfoWindow();
+    google.maps.event.addListener(marker, 'click', function () {
+        infoBox.setContent('<div><strong>'+marker.title+'</strong></div>');
+        infoBox.open(map, marker); //wnat to appear on the map and by marker
+    })
+}
+
+// when movemap btn is clicked, find it's lat and lng and zoom
+function moveMap() {
+    var latlng = new google.maps.LatLng(-41.282308, 174.767451);
+    map.panTo(latlng); // move to the valye of markers
+    map.setZoom(17);
+}
+
+function findMe(){
+    console.log();
 }

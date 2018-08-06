@@ -58,3 +58,8 @@ html, body{
     clear: both;
     display: block;
     content
+}
+
+.place:hover {
+    background-color: pink;
+}
