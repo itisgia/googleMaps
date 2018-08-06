@@ -3,7 +3,7 @@
 // people have  turned on / off js.
 // if you do it this way, you won'thave an error whatsoever
 google.maps.event.addDomListener(window, 'load', initmap);
-var map; // making in global
+var map; // making in global to use in other functions
 
 function initmap() {
 
@@ -102,7 +102,24 @@ function addAllMarkrers() {
         type: 'GET',
         dataType: 'json',
         success: function (markers) {
-            console.log(markers);
+            // console.log(markers);
+            //adding palce name usong for loop
+            for (var i = 0; i < markers.length; i++) {
+              $("#places").append("<div class='place'><h3>"+markers[i].place_name+"</h3></div><hr>");
+
+              var marker = new google.maps.Marker({
+                  position : {
+                      lat: markers[i].lat,
+                      lng: markers[i].lng
+                  },
+                  title: markers[i].place_name,
+                  map: map, // init map
+                  animation: google.maps.Animation.BOUNCE,
+                  icon: new google.maps.MarkerImage('data/kiwi-bird.svg',
+                    null, null, null, new google.maps.Size(164,164)),
+                  draggable: false,
+              });
+            }
         },
         error: function (error) {
             console.log("ERROR, SOMETHING WENT WRONG");
