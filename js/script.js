@@ -6,6 +6,7 @@ google.maps.event.addDomListener(window, 'load', initmap);
 var map; // making in global to use in other functions
 var latlng;
 var infoBox;
+var placeArray = []
 function initmap() {
 
     var mapOptions = {
@@ -74,26 +75,9 @@ function initmap() {
             }
         ]
     }
-    // my ver
-    // var botanicGarden = {
-    //         lat:  -41.282308,
-    //         lng: 174.767451
-    // }
-    // var map = new google.maps.Map(document.getElementById('map'), mapOptions, {zoom: 4, center: botanicGarden})
-    // var marker = new google.maps.Marker({position: botanicGarden, map: map});
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     addAllMarkrers();
-
-    // marker referance.
-    // var myLatlng = new google.maps.LatLng(-41.286460,174.776236);
-    // var marker = new google.maps.Marker({
-    // position: myLatlng,
-    // title:"Hello World!"
-    // });
-    //
-    // // To add the marker to the map, call setMap();
-    // marker.setMap(map);
 }
 
 // gettubg markers data
@@ -121,6 +105,7 @@ function addAllMarkrers() {
                     null, null, null, new google.maps.Size(164,164))
               });
               markerClickEvent(marker);
+              placeArray.push(markers);
             }
         },
         error: function (error) {
@@ -150,6 +135,6 @@ function moveMap() {
     map.setZoom(17);
 }
 
-function findMe(){
-    console.log();
+function findSpots() {
+  
 }

@@ -1,5 +1,6 @@
 [
-    {   "id": 1,
+    {
+        "id": 1,
         "place_name": "Te Papa Museum",
         "lat" : -41.290456,
         "lng" :  174.782089
